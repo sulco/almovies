@@ -1,0 +1,23 @@
+<form class="row">
+
+    <div class="col-md-11">
+        <input type="text" class="form-control" ng-model="query">
+    </div>
+
+    <div class="col-md-1">
+        <input type="submit" value="znajdź" class="btn btn-primary btn-sm pull-right" ng-click="search(query)">
+    </div>
+
+</form>
+
+<br>
+
+<div>
+
+    <ul class="list-group">
+        <li ng-repeat="movie in movies" class="list-group-item">
+            {{ movie.title }}
+        </li>
+    </ul>
+
+</div>
