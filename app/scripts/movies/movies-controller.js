@@ -2,7 +2,7 @@
 
 angular.module('moviesApp.movies')
 
-.controller('MoviesCtrl', function ($scope, moviesService) {
+.controller('MoviesCtrl', function ($scope, moviesService, bookmarksService) {
 
     $scope.query = moviesService.lastQuery();
 
@@ -15,5 +15,9 @@ angular.module('moviesApp.movies')
     if ($scope.query) {
         $scope.search($scope.query);
     }
+
+    $scope.bookmark = function (movie) {
+        bookmarksService.add(movie);
+    };
 
 });

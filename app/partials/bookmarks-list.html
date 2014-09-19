@@ -1,1 +1,13 @@
 Ulubione
+
+<ul class="list-group">
+    <li 
+     class="list-group-item col-md-1" 
+     ng-repeat="movie in bookmarks"
+     ng-click="remove(movie)">
+
+        <mv-poster path="{{ movie.poster_path }}" size="xs"></mv-poster>
+        <p>{{ movie.title }}</p>
+
+    </li>
+</ul>

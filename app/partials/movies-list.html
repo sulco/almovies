@@ -41,13 +41,15 @@
 
             <mv-poster path="{{ movie.poster_path }}" size="xs"></mv-poster>
 
-            <!-- <img ng-if="movie.poster_path"
-             ng-src="http://image.tmdb.org/t/p/w92{{ movie.poster_path }}" alt="">
-            <img ng-if="!movie.poster_path"
-             src="http://dummyimage.com/92x7:10&amp;text=brak+okładki" alt=""> -->
+            <button class="btn btn-xs btn-primary" ng-click="bookmark(movie)">
+                do ulubionych
+            </button>
+
             <h3>{{ movie.title }}</h3>
             <p ng-if="movie.adult">adult</p>
             <small>{{ movie.release_date }}</small>
+
+
         </li>
     </ul>
 
