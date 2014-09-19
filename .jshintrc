@@ -20,6 +20,15 @@
   "white": true,
   "validthis": true,
   "globals": {
-    "angular": false
+    "angular": false,
+    "beforeEach": false,
+    "expect": false,
+    "inject": false,
+    "it": false,
+    "iit": false,
+    "xit": false,
+    "describe": false,
+    "ddescribe": false,
+    "xdescribe": false
   }
 }

@@ -12,11 +12,42 @@
 
 <br>
 
+<div class="row">
+    <div class="col-md-4">
+        <label>
+            Sortuj po dacie 
+            <input type="checkbox" ng-model="dateSortOrder">
+            <span ng-show="dateSortOrder">malejąco</span>
+            <span ng-show="!dateSortOrder">rosnąco</span>
+        </label>
+    </div>
+    <div class="col-md-6">
+        <label>
+            Filtruj po tytule:
+            <input type="search" ng-model="filterObject.title">
+        </label>
+        <label>
+            i roku:
+            <input type="search" ng-model="dateLimit">
+        </label>
+    </div>
+</div>
+
 <div>
 
     <ul class="list-group">
-        <li ng-repeat="movie in movies" class="list-group-item">
-            {{ movie.title }}
+        <li ng-repeat="movie in movies | orderBy:'release_date':dateSortOrder | filter:filterObject | movieDateLimit:dateLimit:true" 
+         class="list-group-item col-md-2 movie-shortinfo">
+
+            <mv-poster path="{{ movie.poster_path }}" size="xs"></mv-poster>
+
+            <!-- <img ng-if="movie.poster_path"
+             ng-src="http://image.tmdb.org/t/p/w92{{ movie.poster_path }}" alt="">
+            <img ng-if="!movie.poster_path"
+             src="http://dummyimage.com/92x7:10&amp;text=brak+okładki" alt=""> -->
+            <h3>{{ movie.title }}</h3>
+            <p ng-if="movie.adult">adult</p>
+            <small>{{ movie.release_date }}</small>
         </li>
     </ul>
 
